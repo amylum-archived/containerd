@@ -27,7 +27,6 @@ build: submodule
 	rm -rf $(BUILD_DIR)
 	mkdir -p $(BUILD_DIR)/src/github.com/docker
 	cp -R upstream $(BUILD_DIR)/src/github.com/docker/containerd
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS)' ./configure $(PATH_FLAGS)
 	make -C $(BUILD_DIR)/src/github.com/docker/containerd
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
 	cp upstream/LICENSE.code $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
