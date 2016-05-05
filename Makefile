@@ -21,7 +21,7 @@ manual: submodule
 	./meta/launch /bin/bash || true
 
 build_container:
-	docker build -t docker-pkg meta
+	docker build -t containerd-pkg meta
 
 container:
 	./meta/launch
