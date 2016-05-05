@@ -34,7 +34,7 @@ build: submodule
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
 	cp upstream/LICENSE.code $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
 	mkdir -p $(RELEASE_DIR)/usr/bin
-	cd src/github.com/docker/containerd/bin && cp * $(RELEASE_DIR)/usr/bin/
+	cp $(BUILD_DIR)/src/github.com/docker/containerd/bin/* $(RELEASE_DIR)/usr/bin/
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
 
 version:
