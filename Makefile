@@ -10,15 +10,18 @@ PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/v//')
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-.PHONY : default submodule manual container build version push local
+.PHONY : default submodule build_container manual container build version push local
 
-default: submodule container
+default: submodule build_container container
 
 submodule:
 	git submodule update --init
 
 manual: submodule
 	./meta/launch /bin/bash || true
+
+build_container:
+	docker build -t docker-pkg meta
 
 container:
 	./meta/launch
