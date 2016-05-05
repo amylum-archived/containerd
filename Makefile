@@ -30,7 +30,7 @@ build: submodule
 	rm -rf $(BUILD_DIR)
 	mkdir -p $(BUILD_DIR)/src/github.com/docker
 	cp -R upstream $(BUILD_DIR)/src/github.com/docker/containerd
-	make -C $(BUILD_DIR)/src/github.com/docker/containerd
+	GOPATH=$(BUILD_DIR) make -C $(BUILD_DIR)/src/github.com/docker/containerd
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
 	cp upstream/LICENSE.code $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
 	mkdir -p $(RELEASE_DIR)/usr/bin
