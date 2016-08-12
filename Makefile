@@ -17,13 +17,13 @@ default: submodule build_container container
 submodule:
 	git submodule update --init
 
-manual: submodule
+manual: submodule build_container
 	./meta/launch /bin/bash || true
 
 build_container:
 	docker build -t containerd-pkg meta
 
-container:
+container: build_container
 	./meta/launch
 
 build: submodule
