@@ -1,7 +1,7 @@
 containerd
 ==========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/containerd.svg)](https://circleci.com/gh/amylum/containerd)
+[![Build Status](https://img.shields.io/circleci/project/amylum/containerd/master.svg)](https://circleci.com/gh/amylum/containerd)
 [![GitHub release](https://img.shields.io/github/release/amylum/containerd.svg)](https://github.com/amylum/containerd/releases)
 [![Apache Licensed](http://img.shields.io/badge/license-apache-green.svg)](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
 
