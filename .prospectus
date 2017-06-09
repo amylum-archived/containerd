@@ -1,3 +1,8 @@
+Prospectus.extra_dep('file', 'prospectus_circleci')
+Prospectus.extra_dep('file', 'prospectus_pkgforge')
+
+my_slug = 'amylum/containerd'
+
 item do
   expected do
     github_tag
@@ -9,4 +14,7 @@ item do
     git_tag
     regex /^(.*)-\d+$/
   end
+
+  extend ProspectusPkgforge::DepItems
+  extend ProspectusCircleci::Build.new(my_slug)
 end
